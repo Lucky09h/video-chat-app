@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Global Video Chat App</title>
+
+<link rel="manifest" href="manifest.json">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+}
+
+.header {
+  padding: 15px;
+  text-align: center;
+  background: #1e293b;
+  font-size: 18px;
+}
+
+.card {
+  margin: 15px;
+  padding: 15px;
+  background: #1e293b;
+  border-radius: 12px;
+}
+
+.btn {
+  padding: 10px;
+  background: #22c55e;
+  border: none;
+  color: white;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.user {
+  padding: 10px;
+  background: #334155;
+  margin-top: 8px;
+  border-radius: 8px;
+}
+
+.adbox {
+  margin: 15px;
+  padding: 15px;
+  background: #111827;
+  text-align: center;
+  border: 1px dashed #64748b;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+🌍 Global Video Chat (PWA App)
+</div>
+
+<div class="card">
+<h3>Find Users by Country</h3>
+<select id="country">
+<option>Pakistan</option>
+<option>India</option>
+<option>USA</option>
+<option>UK</option>
+</select>
+
+<button class="btn" onclick="loadUsers()">Search Users</button>
+
+<div id="users"></div>
+</div>
+
+<!-- ADS PLACEHOLDER -->
+<div class="adbox">
+🚀 Ad Space (Monetag / Ads Here)
+</div>
+
+<div class="card">
+<h3>Video Chat (Demo)</h3>
+<button class="btn">Start Video Call</button>
+<p>⚠ Demo mode (no real backend)</p>
+</div>
+
+<script>
+function loadUsers(){
+  const users = [
+    "Ali - Online",
+    "John - Online",
+    "Sara - Offline",
+    "Mike - Online"
+  ];
+
+  let box = document.getElementById("users");
+  box.innerHTML = "";
+
+  users.forEach(u=>{
+    let div = document.createElement("div");
+    div.className = "user";
+    div.innerText = u;
+    box.appendChild(div);
+  });
+}
+</script>
+
+</body>
+</html>
